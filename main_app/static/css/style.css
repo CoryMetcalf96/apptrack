@@ -11,7 +11,7 @@
 #263238 blue-grey darken-4 */
 
 /* ENTIRE DOCUMENT */
-html { 
+html {
     background-color: #cfd8dc;
 }
 
@@ -41,15 +41,30 @@ header {
 header a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 32px;
+    font-size: 25px;
     color: #ffffff;
     display: block;
-  }
+}
 
-  /* MAIN BODY */
+/* MAIN BODY */
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
     margin-left: 140px;
+}
+
+
+/* NEW APPLICATION PAGE */
+/* NEW APPLICATION DIV */
+#new-card {
+    padding: 0px 15px 15px 15px;
+}
+
+#new-table {
+    margin-bottom: 10px;
+}
+
+#new-btn {
+    background-color: #546e7a;
 }

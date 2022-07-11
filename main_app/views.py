@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic.edit import CreateView
 from .models import Application
 
 # HOME VIEW
@@ -19,3 +19,8 @@ def applications_index(request):
 def applications_detail(request, application_id):
     application = Application.objects.get(id=application_id)
     return render(request, 'applications/detail.html', {'application' : application})
+
+# APPLICATION CREATE CLASS-BASED-VIEW
+class ApplicationsCreate(CreateView):
+    model = Application
+    fields = '__all__'

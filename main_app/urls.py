@@ -10,4 +10,6 @@ urlpatterns = [
     path('applications/', views.applications_index, name='applications_index'),
     # PATH TO VIEW INDIVIDUAL APPLICATIONS
     path('applications/<int:application_id>/', views.applications_detail, name='applications_detail'),
+    # PATH TO CREATE A NEW APPLICATION
+    path('applications/create', views.ApplicationsCreate.as_view(), name='applications_create')
 ]

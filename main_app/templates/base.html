@@ -17,7 +17,8 @@
                 <ul>
                     <li><a href="/" >APPTRACK</a></li>
                     <li><a href="/about">ABOUT</a></li>
-                    <li><a href="/applications">APPLICATIONS</a></li>
+                    <li><a href="{% url 'applications_index' %}">VIEW APPLICATIONS</a></li>
+                    <li><a href="{% url 'applications_create' %}">NEW APPLICATION</a></li>
                 </ul>
             </div>
     </header>
