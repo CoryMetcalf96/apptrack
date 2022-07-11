@@ -1,0 +1,17 @@
+{% extends 'base.html' %}{% block content %}
+
+<h1>Application Information:</h1>
+
+<div class="card">
+    <div class="card-content">
+        <span class="card-title">{{ application.company_name }}</span>
+        <hr>
+        <p>Application Date: {{ application.date_applied }}</p>
+        <p>Company Website: <a href="{{ app.company_website }}">{{application.company_website}}</a></p>
+        <p>Company Summary: {{ application.company_summary}}</p>
+        <p>Application Link: <a href="{{ app.application_link }}">{{ application.application_link}}</a></p>
+        <p>Personal Notes: {{ application.notes }}</p>
+    </div>
+</div>
+
+{% endblock %}

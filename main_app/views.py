@@ -14,3 +14,8 @@ def about(request):
 def applications_index(request):
     applications = Application.objects.all()
     return render(request, 'applications/index.html', {'applications': applications})
+
+# APPLICATION DETAIL VIEW (INDIVIDUAL)
+def applications_detail(request, application_id):
+    application = Application.objects.get(id=application_id)
+    return render(request, 'applications/detail.html', {'application' : application})

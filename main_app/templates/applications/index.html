@@ -5,13 +5,11 @@
 {% for app in applications %}
     <div class="card">
         <div class="card-content">
-            <span class="card-title">{{ app.company_name }}:</span>
+            <a href="/applications/{{ app.id }}/"><span class="card-title">{{ app.company_name }}:</span></a>
             <hr>
             <p>Application Date: {{ app.date_applied }}</p>
             <p>Company Website: <a href="{{ app.company_website }}">{{app.company_website}}</a></p>
-            <p>Company Summary: {{ app.company_summary}}</p>
             <p>Application Link: <a href="{{ app.application_link }}">{{ app.application_link}}</a></p>
-            <p>Personal Notes: {{ app.notes }}</p>
         </div>
     </div>
 {% endfor %}
