@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Application
+from .models import Application, Status
 from .forms import ContactForm
 
 # HOME VIEW
@@ -19,9 +19,10 @@ def applications_index(request):
 # APPLICATION DETAIL VIEW (INDIVIDUAL)
 def applications_detail(request, application_id):
     application = Application.objects.get(id=application_id)
+    status = Status.objects.get(id=application_id)
     # Instantiate the contact form
     contact_form = ContactForm()
-    return render(request, 'applications/detail.html', {'application' : application, 'contact_form': contact_form})
+    return render(request, 'applications/detail.html', {'application' : application, 'contact_form': contact_form, 'status': status})
 
 # APPLICATION CREATE CLASS-BASED-VIEW
 class ApplicationsCreate(CreateView):

@@ -38,3 +38,27 @@ class Contact(models.Model):
 
     def __str__(self):
         return f'Method of contact: {self.get_contact_method_display()} on {self.date}.'
+
+    class Meta:
+        ordering = ['-date']
+
+
+# STATUS MODEL
+APPLICATION_STATUS = (
+    ('A', 'Application Sent'),
+    ('B', 'Followed-Up'),
+    ('C', 'Received Contact'),
+    ('D', 'Interview Scheduled'),
+    ('E', 'Interview Finished'),
+    ('F', 'Offer Received'),
+    ('G', 'Offer Accepted'),
+    ('H', 'Application Closed')
+)
+
+class Status(models.Model):
+    application_status = models.CharField(max_length=30, choices=APPLICATION_STATUS, default=APPLICATION_STATUS[0])
+    is_priority = models.BooleanField(default=False)
+    application = models.ForeignKey(Application, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'The current application status: {self.application_status}.'
