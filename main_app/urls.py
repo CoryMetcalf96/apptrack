@@ -18,4 +18,6 @@ urlpatterns = [
     path('applications/<int:pk>/delete/', views.ApplicationsDelete.as_view(), name='applications_delete'),
     # PATH TO ADD A CONTACT TO AN INDIVIDUAL APPLICATION
     path('applications/<int:application_id>/add_contact/', views.add_contact, name='add_contact'),
+    # PATH TO ADD A STATUS TO AN INDIVIDUAL APPLICATION
+    path('applications/<int:application_id>/add_status/', views.add_status, name='add_status'),
 ]

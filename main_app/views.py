@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Application, Status
-from .forms import ContactForm
+from .forms import ContactForm, StatusForm
 
 # HOME VIEW
 def home(request):
@@ -20,9 +20,10 @@ def applications_index(request):
 def applications_detail(request, application_id):
     application = Application.objects.get(id=application_id)
     status = Status.objects.get(id=application_id)
-    # Instantiate the contact form
+    # Instantiate the contact form and status form
     contact_form = ContactForm()
-    return render(request, 'applications/detail.html', {'application' : application, 'contact_form': contact_form, 'status': status})
+    status_form = StatusForm()
+    return render(request, 'applications/detail.html', {'application' : application, 'contact_form': contact_form, 'status': status, 'status_form': status_form})
 
 # APPLICATION CREATE CLASS-BASED-VIEW
 class ApplicationsCreate(CreateView):
@@ -46,4 +47,13 @@ def add_contact(request, application_id):
         new_contact = form.save(commit=False)
         new_contact.application_id = application_id
         new_contact.save()
+    return redirect('applications_detail', application_id=application_id)
+
+# APPLICATION ADD STATUS FUNCTION
+def add_status(request, application_id):
+    form = StatusForm(request.POST)
+    if form.is_valid():
+        new_status = form.save(commit=False)
+        new_status.application_id = application_id
+        new_status.save()
     return redirect('applications_detail', application_id=application_id)
