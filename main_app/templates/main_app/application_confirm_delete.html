@@ -1,0 +1,17 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Delete Application</h1>
+<div class="card">
+    <div class="card-content">
+        <h4>
+            Are you sure you want to delete your {{ object.company_name }} application tracker?
+        </h4>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="Yes - Delete this application tracker" class="btn" />
+            <a href="{% url 'applications_detail' application.id %}">Go Back...</a>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

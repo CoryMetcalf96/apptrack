@@ -12,6 +12,10 @@
         <p>Application Link: <a href="{{ app.application_link }}">{{ application.application_link}}</a></p>
         <p>Personal Notes: {{ application.notes }}</p>
     </div>
+    <div class="card-action">
+        <a href="{% url 'applications_update' application.id %}" class="btn">Update Application</a>
+        <a href="{% url 'applications_delete' application.id %}" class="btn">Delete Application</a>
+    </div>
 </div>
 
 {% endblock %}
