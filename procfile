@@ -1,1 +1,0 @@
-web: gunicorn apptrack.wsgi
