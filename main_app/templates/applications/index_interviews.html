@@ -1,5 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 
+<div class="card" id="application-card">
+    <div class="card-content">
+        <p><strong>Interview Applications: </strong>All applications that have a status of 'Interview Scheduled' or 'Interview Finished'.</p>
+    </div>
+</div>
 <div class="application-index">
     {% for app in applications %}
     {% if app.status_set.last.get_application_status_display == 'Interview Scheduled' %}
@@ -28,6 +33,7 @@
     {% endif %}
     {% endfor %}
 </div>
+<br>
 <div class="card" id="application-card">
     <div class="card-content">
         <p>Looks like there's no more job applications in the interview status! Click <a href="../applications/">HERE</a> to view all of your applications.</p>

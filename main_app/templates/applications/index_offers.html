@@ -1,5 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 
+<div class="card" id="application-card">
+    <div class="card-content">
+        <p><strong>Offer Applications: </strong>All application with a status of 'Offer Received' or 'Offer Accepted'.</p>
+    </div>
+</div>
 <div class="application-index">
     {% for app in applications %}
     {% if app.status_set.last.get_application_status_display == 'Offer Received' %}
@@ -28,6 +33,7 @@
     {% endif %}
     {% endfor %}
 </div>
+<br>
 <div class="card" id="application-card">
     <div class="card-content">
         <p>Looks like there's no more job applications in the offer status! Click <a href="../applications/">HERE</a> to view all of your applications.</p>

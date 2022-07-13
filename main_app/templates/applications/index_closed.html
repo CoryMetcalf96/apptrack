@@ -1,6 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 
-<!-- <h2 class="application-header">All Applications:</h2> -->
+<div class="card" id="application-card">
+    <div class="card-content">
+        <p><strong>Closed Applications: </strong>All applications with a status of 'Closed Application'.</p>
+    </div>
+</div>
 <div class="application-index">
     {% for app in applications %}
     {% if app.status_set.last.get_application_status_display == 'Application Closed' %}
@@ -17,6 +21,7 @@
     {% endif %}
     {% endfor %}
 </div>
+<br>
 <div class="card" id="application-card">
     <div class="card-content">
         <p>Looks like there's no more closed job applications! Feel free to click <a href="../applications/">HERE</a> to view all open applications.</p>

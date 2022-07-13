@@ -1,6 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 
-<!-- <h2 class="application-header">All Applications:</h2> -->
+<div class="card" id="application-card">
+    <div class="card-content">
+        <p><strong>Priority Applications: </strong>All application marked with a 'Priority' status.</p>
+    </div>
+</div>
 <div class="application-index">
     {% for app in applications %}
     {% if app.status_set.last.get_is_priority_display == 'Priority' %}
@@ -17,6 +21,7 @@
     {% endif %}
     {% endfor %}
 </div>
+<br>
 <div class="card" id="application-card">
     <div class="card-content">
         <p>Looks like there's no more job applications with a priority status! Click <a href="../applications/">HERE</a> to view all of your applications.</p>

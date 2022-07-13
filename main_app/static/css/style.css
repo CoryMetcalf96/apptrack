@@ -47,7 +47,7 @@ header a {
     display: block;
 }
 
-.navigation-apptrack{
+.navigation-apptrack {
     font-weight: 700;
     font-size: 35px;
 }
@@ -76,7 +76,7 @@ body {
 }
 
 #application-card {
-    margin: 10px;
+    margin: 5px;
     box-shadow: 3px 3px 8px #888888;
 }
 
@@ -84,8 +84,9 @@ body {
     font-style: italic;
 }
 
+
 #priority-card {
-    margin: 10px;
+    margin: 5px;
     box-shadow: 3px 3px 8px #888888;
     border: solid;
     border-width: 4px;
@@ -98,6 +99,18 @@ body {
     border-color: rgb(79, 96, 97);
     margin: 10px;
     box-shadow: 3px 3px 8px #888888;
+}
+
+
+/* APPLICATION DETAIL PAGE */
+#detail-application-status {
+    font-size: 25px;
+    text-align: center;
+}
+
+#detail-status-priority {
+    font: 20px;
+    text-align: center;
 }
 
 
@@ -119,4 +132,91 @@ body {
 /* CONTACT TIMELINE */
 #contact-timeline-table {
     table-layout: fixed;
+}
+
+/* RESPONSIVE QUERIES */
+@media only screen and (max-width: 1100px) {
+    header {
+        width: 180px;
+    }
+
+    header a {
+        font-size: 20px;
+        color: #ffffff;
+        display: block;
+    }
+
+    .navigation-apptrack {
+        font-weight: 700;
+        font-size: 25px;
+    }
+
+    body {
+        margin-left: 180px;
+    }
+
+    .application-index {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .application-index {
+        grid-template-columns: auto;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    header {
+        text-align: center;
+        height: auto;
+        width: 100%;
+        position: relative;
+        z-index: auto;
+        top: auto;
+        left: auto;
+        overflow-x: auto;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-right: 10px;margin-bottom: 10px;
+        background-color: #546e7a;
+        border-right: solid;
+        border-color: #263238;
+        border-width: 3px;
+        box-shadow: 5px 5px 8px #888888;
+        font: 'Raleway';
+    }
+
+    #navigation-links {
+        display: grid;
+    }
+    
+    .all-navigation-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    header a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 15px;
+        color: #ffffff;
+        display: block;
+    }
+    
+    .navigation-apptrack {
+        font-weight: 700;
+        font-size: 35px;
+    }
+    
+    .username {
+        color: #eceff1;
+    }
+    
+    body {
+        min-height: auto;
+        margin-left: 0px;
+    }
+    
 }

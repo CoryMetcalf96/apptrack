@@ -97,7 +97,7 @@ class ApplicationsCreate(LoginRequiredMixin, CreateView):
 # APPLICATION UPDATE CLASS-BASED-VIEW
 class ApplicationsUpdate(LoginRequiredMixin, UpdateView):
     model = Application
-    fields = '__all__'
+    fields = ['company_name', 'date_applied', 'company_website', 'company_summary', 'application_link', 'notes']
 
 
 # APPLICATION DELETE CLASS-BASED-VIEW

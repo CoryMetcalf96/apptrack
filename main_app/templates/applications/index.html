@@ -1,6 +1,10 @@
 {% extends 'base.html' %} {% block content %}
 
-<!-- <h2 class="application-header">All Applications:</h2> -->
+<div class="card" id="application-card">
+    <div class="card-content">
+        <p><strong>Open Applications: </strong>All application with a status of 'Open' that have not been barked as 'Closed'.</p>
+    </div>
+</div>
 <div class="application-index">
     {% for app in applications %}
     {% if app.status_set.last.get_application_status_display != 'Application Closed' %}
@@ -30,6 +34,7 @@
     {% endif %}
     {% endfor %}
 </div>
+<br>
 <div class="card" id="application-card">
     <div class="card-content">
         <p>Looks like there's no more job applications! Feel free to add more using the 'NEW APP' option in the navigation bar!
