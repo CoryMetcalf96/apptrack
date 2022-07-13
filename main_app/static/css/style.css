@@ -15,29 +15,30 @@ html {
     background-color: #cfd8dc;
 }
 
+* {
+    font-family: 'Raleway', sans-serif;
+}
+
 /* NAVIGATION BAR */
 header {
-    /* height: 100%; */
-    width: auto;
+    height: 100%;
+    width: 225px;
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
     overflow-x: hidden;
-    margin-top: 30px;
-    margin-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 10px;
     background-color: #546e7a;
-    border: solid;
+    border-right: solid;
     border-color: #263238;
     border-width: 3px;
-    border-radius: 10px;
     box-shadow: 5px 5px 8px #888888;
+    font: 'Raleway';
 }
 
-/* NAVIGATION BAR LINKS */
 header a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
@@ -46,12 +47,45 @@ header a {
     display: block;
 }
 
+.navigation-apptrack{
+    font-weight: 700;
+    font-size: 35px;
+}
+
 /* MAIN BODY */
 body {
-    display: flex;
     min-height: 100vh;
-    flex-direction: column;
-    margin-left: 140px;
+    margin-left: 225px;
+}
+
+
+/* APPLICATION INDEX PAGE */
+/* .application-header {
+    font-weight: 700;
+} */
+
+.application-index {
+    width: auto;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-top: 20px;
+}
+
+#application-card {
+    margin: 10px;
+    box-shadow: 3px 3px 8px #888888;
+}
+
+#application-card-title {
+    font-style: italic;
+}
+
+#priority-card {
+    margin: 10px;
+    box-shadow: 3px 3px 8px #888888;
+    border: solid;
+    border-width: 4px;
+    border-color: #4fc3f7;
 }
 
 

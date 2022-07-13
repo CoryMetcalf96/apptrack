@@ -1,17 +1,32 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>Applications:</h1>
-
-{% for app in applications %}
-    <div class="card">
+<!-- <h2 class="application-header">All Applications:</h2> -->
+<div class="application-index">
+    {% for app in applications %}
+    {% if app.status_set.last.get_is_priority_display != 'Priority' %}
+    <div class="card" id="application-card">
         <div class="card-content">
-            <a href="{% url 'applications_detail' app.id %}"><span class="card-title">{{ app.company_name }}:</span></a>
+            <a href="{% url 'applications_detail' app.id %}"><span class="card-title" id="application-card-title">{{app.company_name }}:</span></a>
             <hr>
-            <p>Application Date: {{ app.date_applied }}</p>
-            <p>Company Website: <a href="{{ app.company_website }}">{{app.company_website}}</a></p>
-            <p>Application Link: <a href="{{ app.application_link }}">{{ app.application_link}}</a></p>
+            <p><strong>Apply Date: </strong> {{ app.date_applied }}</p>
+            <p><strong>App Status: </strong>{{ app.status_set.last.get_application_status_display }}</p>
+            <p><a href="{{ app.company_website }}">Company Website</a></p>
+            <p><a href="{{ app.application_link }}">Application Link</a></p>
         </div>
     </div>
-{% endfor %}
+    {% else %}
+    <div class="card" id="priority-card">
+        <div class="card-content">
+            <a href="{% url 'applications_detail' app.id %}"><span class="card-title" id="application-card-title">{{app.company_name }}:</span></a>
+            <hr>
+            <p><strong>Apply Date: </strong> {{ app.date_applied }}</p>
+            <p><strong>App Status: </strong>{{ app.status_set.last.get_application_status_display }}</p>
+            <p><a href="{{ app.company_website }}">Company Website</a></p>
+            <p><a href="{{ app.application_link }}">Application Link</a></p>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
 
 {% endblock %}

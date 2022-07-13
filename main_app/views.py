@@ -55,7 +55,7 @@ def applications_detail(request, application_id):
 # APPLICATION CREATE CLASS-BASED-VIEW
 class ApplicationsCreate(LoginRequiredMixin, CreateView):
     model = Application
-    fields = '__all__'
+    fields = ['company_name', 'date_applied', 'company_website', 'company_summary', 'application_link', 'notes']
 
     # ASSIGN APPLICATION TO THE LOGGED IN USER
     def form_valid(self, form):
