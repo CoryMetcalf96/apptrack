@@ -1,10 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 
-<!-- <h2 class="application-header">All Applications:</h2> -->
 <div class="application-index">
     {% for app in applications %}
-    {% if app.status_set.last.get_application_status_display != 'Application Closed' %}
-    {% if app.status_set.last.get_is_priority_display != 'Priority' %}
+    {% if app.status_set.last.get_application_status_display == 'Interview Scheduled' %}
     <div class="card" id="application-card">
         <div class="card-content">
             <a href="{% url 'applications_detail' app.id %}"><span class="card-title" id="application-card-title">{{app.company_name }}:</span></a>
@@ -15,8 +13,9 @@
             <p><a href="{{ app.application_link }}">Application Link</a></p>
         </div>
     </div>
-    {% else %}
-    <div class="card" id="priority-card">
+    {% endif %}
+    {% if app.status_set.last.get_application_status_display == 'Interview Finished' %}
+    <div class="card" id="application-card">
         <div class="card-content">
             <a href="{% url 'applications_detail' app.id %}"><span class="card-title" id="application-card-title">{{app.company_name }}:</span></a>
             <hr>
@@ -27,12 +26,12 @@
         </div>
     </div>
     {% endif %}
-    {% endif %}
     {% endfor %}
 </div>
 <div class="card" id="application-card">
     <div class="card-content">
-        <p>Looks like there's no more job applications! Feel free to add more using the 'NEW APP' option in the navigation bar!
+        <p>Looks like there's no more job applications in the interview status! Click <a href="../applications/">HERE</a> to view all of your applications.</p>
     </div>
 </div>
+
 {% endblock %}

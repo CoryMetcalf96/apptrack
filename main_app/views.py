@@ -41,6 +41,37 @@ def applications_index(request):
     return render(request, 'applications/index.html', {'applications': applications})
 
 
+# APPLICATION INDEX VIEW (PRIORITY)
+@login_required
+def applications_index_priority(request):
+    applications = Application.objects.filter(user=request.user)
+    return render(request, 'applications/index_priority.html', {'applications': applications})
+
+# APPLICATION INDEX VIEW (PRIORITY)
+@login_required
+def applications_index_follows(request):
+    applications = Application.objects.filter(user=request.user)
+    return render(request, 'applications/index_follows.html', {'applications': applications})
+
+# APPLICATION INDEX VIEW (INTERVIEWS)
+@login_required
+def applications_index_interviews(request):
+    applications = Application.objects.filter(user=request.user)
+    return render(request, 'applications/index_interviews.html', {'applications': applications})
+
+# APPLICATION INDEX VIEW (INTERVIEWS)
+@login_required
+def applications_index_offers(request):
+    applications = Application.objects.filter(user=request.user)
+    return render(request, 'applications/index_offers.html', {'applications': applications})
+
+# APPLICATION INDEX VIEW (CLOSED)
+@login_required
+def applications_index_closed(request):
+    applications = Application.objects.filter(user=request.user)
+    return render(request, 'applications/index_closed.html', {'applications': applications})
+
+
 # APPLICATION DETAIL VIEW (INDIVIDUAL)
 @login_required
 def applications_detail(request, application_id):

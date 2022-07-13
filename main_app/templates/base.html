@@ -23,11 +23,16 @@
         <div>
             <ul>
                 <li><a href="/" class="navigation-apptrack">APPTRACK</a></li>
+                <li><a class="username">{{ user.username.capitalize }}</a></li>
                 <br>
                 <li><a href="/about">ABOUT</a></li>
                 {% if user.is_authenticated %}
-                <li><a href="{% url 'applications_index' %}">ALL APPS</a></li>
-                <li><a href="#">PRIORITY APPS</a></li>
+                <li><a href="{% url 'applications_index' %}">OPEN APPS</a></li>
+                <li><a href="{% url 'applications_index_priority' %}">PRIORITY APPS</a></li>
+                <li><a href="{% url 'applications_index_follows' %}">CONTACTED</a></li>
+                <li><a href="{% url 'applications_index_interviews' %}">INTERVIEWS</a></li>
+                <li><a href="{% url 'applications_index_offers' %}">OFFERS</a></li>
+                <li><a href="{% url 'applications_index_closed' %}">CLOSED APPS</a></li>
                 <br>
                 <li><a href="{% url 'applications_create' %}">NEW APP</a></li>
                 <li><a href="{% url 'logout' %}">LOGOUT</a></li>

@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block content %}
+
+<!-- <h2 class="application-header">All Applications:</h2> -->
+<div class="application-index">
+    {% for app in applications %}
+    {% if app.status_set.last.get_application_status_display == 'Application Closed' %}
+    <div class="card" id="closed-card">
+        <div class="card-content">
+            <a href="{% url 'applications_detail' app.id %}"><span class="card-title" id="application-card-title">{{app.company_name }}:</span></a>
+            <hr>
+            <p><strong>Apply Date: </strong> {{ app.date_applied }}</p>
+            <p><strong>App Status: </strong>{{ app.status_set.last.get_application_status_display }}</p>
+            <p><a href="{{ app.company_website }}">Company Website</a></p>
+            <p><a href="{{ app.application_link }}">Application Link</a></p>
+        </div>
+    </div>
+    {% endif %}
+    {% endfor %}
+</div>
+<div class="card" id="application-card">
+    <div class="card-content">
+        <p>Looks like there's no more closed job applications! Feel free to click <a href="../applications/">HERE</a> to view all open applications.</p>
+    </div>
+</div>
+{% endblock %}

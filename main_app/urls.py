@@ -10,6 +10,16 @@ urlpatterns = [
     path('accounts/signup', views.signup, name='signup'),
     # PATH TO VIEW ALL APPLICATIONS
     path('applications/', views.applications_index, name='applications_index'),
+    # PATH TO VIEW PRIORITY APPLICATIONS
+    path('applications_priority/', views.applications_index_priority, name='applications_index_priority'),
+    # PATH TO VIEW PRIORITY APPLICATIONS
+    path('applications_follows/', views.applications_index_follows, name='applications_index_follows'),
+    # PATH TO VIEW INTERVIEW APPLICATIONS
+    path('applications_interviews/', views.applications_index_interviews, name='applications_index_interviews'),
+    # PATH TO VIEW OFFER APPLICATIONS
+    path('applications_offers/', views.applications_index_offers, name='applications_index_offers'),
+    # PATH TO VIEW CLOSED APPLICATIONS
+    path('applications_closed/', views.applications_index_closed, name='applications_index_closed'),
     # PATH TO VIEW INDIVIDUAL APPLICATIONS
     path('applications/<int:application_id>/', views.applications_detail, name='applications_detail'),
     # PATH TO CREATE A NEW APPLICATION

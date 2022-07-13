@@ -52,6 +52,10 @@ header a {
     font-size: 35px;
 }
 
+.username {
+    color: #eceff1;
+}
+
 /* MAIN BODY */
 body {
     min-height: 100vh;
@@ -86,6 +90,14 @@ body {
     border: solid;
     border-width: 4px;
     border-color: #4fc3f7;
+}
+
+#closed-card {
+    border: solid;
+    border-width: 3px;
+    border-color: rgb(79, 96, 97);
+    margin: 10px;
+    box-shadow: 3px 3px 8px #888888;
 }
 
 
