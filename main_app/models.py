@@ -1,6 +1,8 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 from datetime import date
+
 
 
 # APPLICATION MODEL
@@ -11,6 +13,7 @@ class Application(models.Model):
     company_summary = models.TextField(max_length=1000)
     application_link = models.CharField(max_length=200)
     notes = models.TextField(max_length=1000)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     # STR METHOD
     def __str__(self):
@@ -55,9 +58,14 @@ APPLICATION_STATUS = (
     ('H', 'Application Closed')
 )
 
+APPLICATION_PRIORITY = (
+    ('Y', 'Priority'),
+    ('N', 'Not a Priority')
+)
+
 class Status(models.Model):
     application_status = models.CharField(max_length=30, choices=APPLICATION_STATUS, default=APPLICATION_STATUS[0])
-    is_priority = models.BooleanField(default=False)
+    is_priority = models.CharField(max_length=30, choices=APPLICATION_PRIORITY, default=APPLICATION_PRIORITY[1])
     application = models.ForeignKey(Application, on_delete=models.CASCADE)
 
     def __str__(self):

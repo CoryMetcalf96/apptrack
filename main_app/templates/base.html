@@ -18,8 +18,16 @@
                 <ul>
                     <li><a href="/" >APPTRACK</a></li>
                     <li><a href="/about">ABOUT</a></li>
-                    <li><a href="{% url 'applications_index' %}">VIEW APPLICATIONS</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'applications_index' %}">ALL APPS</a></li>
+                    <li><a href="#">PRIORITY APPS</a></li>
+                    <br>
                     <li><a href="{% url 'applications_create' %}">NEW APPLICATION</a></li>
+                    <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+                    {% else %}
+                    <li><a href="{% url 'login' %}">LOGIN</a></li>
+                    <li><a href="{% url 'signup' %}">SIGN UP</a></li>
+                    {% endif %}
                 </ul>
             </div>
     </header>
