@@ -14,7 +14,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='status',
             name='application',
-            field=models.ForeignKey(default='default', on_delete=django.db.models.deletion.CASCADE, to='main_app.application'),
+            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to='main_app.application'),
             preserve_default=False,
         ),
     ]
