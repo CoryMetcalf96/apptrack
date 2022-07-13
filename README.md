@@ -3,7 +3,7 @@
 #### A full crud web app designed to keep your application process organized and simple.
 <img src="https://i.imgur.com/gqpMla3.png" alt="Open Applications"/>
 <img src="https://i.imgur.com/2vNIflL.png" alt="User Authentication"/>
-<img src="./images/Screenshot3.png" alt="Application Details"/>
+<img src="https://imgur.com/a/wz5zFSD" alt="Application Details"/>
 
 
 ## Description
@@ -34,7 +34,7 @@ AppTrack was the answer to simplifying my job search. With access to hundreds of
 
 ## Wireframe
 * InVision Wireframe:
-<img src="https://files.slack.com/files-pri/T0351JZQ0-F03P8H1HU49/screen_shot_2022-07-08_at_4.47.27_pm.png" alt="InVisioin Wireframe Picture"/>
+<img src="https://i.imgur.com/ty6MPjz.png" alt="InVisioin Wireframe Picture"/>
 
 ## Trello Planning
 * Link to Trello: https://trello.com/b/nvBKGyHX/apptrack
