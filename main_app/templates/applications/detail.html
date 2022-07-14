@@ -29,7 +29,7 @@
     <div>
         <div class="card" id="detail-application-status-card">
             <div class="card-content">
-                {% if application.status.set.application_status != None %}
+                {% if application.status_set.last.application_status != None %}
                     <p id="detail-application-status">{{ application.status_set.last.get_application_status_display }}</p>
                     <p id="detail-status-priority"><strong>Application Priority: </strong>{{application.status_set.last.get_is_priority_display }}</p>
                     <br>
