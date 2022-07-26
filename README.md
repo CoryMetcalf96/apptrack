@@ -1,9 +1,12 @@
 # APPTRACK : Organizing your Job Search
 
+
+## <a name="deployment"></a>Deployed Link
+* [Heroku Deployment](https://apptrack2022.herokuapp.com/)
+
 #### A full crud web app designed to keep your application process organized and simple.
 <img src="https://i.imgur.com/gqpMla3.png" alt="Open Applications"/>
 <img src="https://i.imgur.com/2vNIflL.png" alt="User Authentication"/>
-<img src="https://imgur.com/a/wz5zFSD" alt="Application Details"/>
 
 
 ## Description
@@ -48,9 +51,6 @@ AppTrack was the answer to simplifying my job search. With access to hundreds of
 ## <a name="nextsteps"></a>Project Next Steps
 * User will be able to filter based on application dates
 * User will be able to reset their password
-
-## <a name="deployment"></a>Deployed Link
-* [Heroku Deployment](https://apptrack2022.herokuapp.com/)
 
 * You can view the repository:
 [Github.com](https://github.com/CoryMetcalf96/apptrack)
